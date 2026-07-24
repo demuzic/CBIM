@@ -12,19 +12,19 @@ Image processor in C++ that applies convolutional filters (kernels) to files in 
 ## Compilation and Execution
 bash
 make # Compile the project
-./processor # Start the interactive interface
+./processor # Start the interactive interface. Try "help" to begin
 ## Examples
-Original
+###Original
 <img width="640" height="360" alt="jupiter" src="https://github.com/user-attachments/assets/a8f05b97-9421-4f91-a00f-8a4574573262" />
 
-Emboss filter
+###Emboss filter
 <img width="640" height="360" alt="jupiter_emboss" src="https://github.com/user-attachments/assets/2aceeeca-585a-475d-aaaa-1a41154bd713" />
 
-Gauss blur filter
+###Gauss blur filter
 <img width="640" height="360" alt="jupiter_gauss_blur" src="https://github.com/user-attachments/assets/3274760e-d041-486b-8abe-dbfc073fad7f" />
 
-Sharpen filter
+###Sharpen filter
 <img width="640" height="360" alt="jupiter_sharpen" src="https://github.com/user-attachments/assets/66cc5176-e684-42cf-90e2-78da91aaaf2d" />
 
-Sobel filter
+###Sobel filter
 <img width="640" height="360" alt="jupiter_sobel" src="https://github.com/user-attachments/assets/584e1659-6372-4cc1-937e-13a059116a49" />
