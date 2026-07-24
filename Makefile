@@ -1,5 +1,5 @@
 CXX = g++
-CXXFLAGS = -std=c++17 -Wall -Wextra -I include
+CXXFLAGS = -std=c++17 -O2 -Wall -Wextra -I include
 TARGET = processor
 BUILD_DIR = build
 SRC_DIR = src

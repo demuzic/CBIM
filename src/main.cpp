@@ -19,6 +19,7 @@ int main() {
         if (command == "help") {
             cout << "use \"magick imagem.png -compress none imagem.ppm\" to convert to ppm" << endl;
             cout << "load [image idx] [file name]" << endl;
+            cout << "loadk [kernel idx] [file name]" << endl;
             cout << "makek [kernel idx] [u] [v]" << endl;
             cout << "drawk [kernel idx]" << endl;
             cout << "applyk [image idx original] [kernel idx] [image idx result]" << endl;
