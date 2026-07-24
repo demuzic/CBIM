@@ -10,9 +10,11 @@ Image processor in C++ that applies convolutional filters (kernels) to files in 
 - Support multiple images and kernels in memory simultaneously.
 
 ## Compilation and Execution
-'''bash
+```Shell
+bash
 make # Compile the project
-./processor # Start the interactive interface. Try "help" to begin'''
+./processor # Start the interactive interface. Try "help" to begin
+```
 ## Examples
 
 ### Original
