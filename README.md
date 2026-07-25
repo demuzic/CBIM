@@ -1,4 +1,4 @@
-# PPM Image Processor with Kernels
+# PPM Image Processor with Convolution
 
 Image processor in C++ that applies convolutional filters (kernels) to files in PPM P3 (ASCII) format. Developed with a focus on modularization, interface via command line and pixel-by-pixel processing without external dependencies.
 
