@@ -41,5 +41,5 @@ void make_ppm(const Image& img, const string& filename) {
         file << endl;
     }
     file.close();
-    cout << "Imagem salva em: " << filename << endl;
+    cout << "Saved: " << filename << endl;
 }
