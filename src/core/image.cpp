@@ -23,13 +23,17 @@ Image load_image(const string& image_name) {
     }
     return img;
 }
-Image create_image_by_layer(Image R, Image G, Image B, int width, int height) {
+Image create_image_by_layer(Image R, Image G, Image B, int height, int width, int maxVal) {
     Image img;
+    img.width = width;
+    img.height = height;
+    img.maxVal = maxVal;
+    img.data = vector<vector<Pixel>>(height, vector<Pixel>(width));
     for(int i = 0; i < height; i++) {
         for (int j = 0; j < width; j++) {
             img.data[i][j].r = R.data[i][j].r;
-            img.data[i][j].g = R.data[i][j].g;
-            img.data[i][j].b = R.data[i][j].b;
+            img.data[i][j].g = G.data[i][j].g;
+            img.data[i][j].b = B.data[i][j].b;
         }
     }
     return img;
