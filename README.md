@@ -31,3 +31,8 @@ make # Compile the project
 
 ### Sobel filter
 <img width="640" height="360" alt="jupiter_sobel" src="https://github.com/user-attachments/assets/584e1659-6372-4cc1-937e-13a059116a49" />
+
+### blue layer chromatic aberration
+<img width="640" height="360" alt="aberration" src="https://github.com/user-attachments/assets/9eb03a41-94f8-4dd1-9561-6776406286a8" />
+
+
