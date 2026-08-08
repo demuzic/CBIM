@@ -11,4 +11,4 @@ struct Kernel {
 
 Kernel load_kernel(const std::string& kernel_name);
 Kernel make_kernel(int width, int height);
-Image apply_kernel(const Image& img, const Kernel& k);
+Image apply_kernel(const Image& img, const Kernel& k, const int flag);

@@ -42,7 +42,7 @@ Kernel make_kernel(int width, int height) {
     return k;
 }
 
-Image apply_kernel(const Image& img, const Kernel& k) {
+Image apply_kernel(const Image& img, const Kernel& k, int flag) { //flag: -1 = all rgb layers, 0 = r, 1 = g and 2 = b
     Image new_img;
     new_img.width = img.width;
     new_img.height = img.height;
@@ -52,7 +52,7 @@ Image apply_kernel(const Image& img, const Kernel& k) {
     int v_offset = k.height / 2;
     for (int i = 0; i < new_img.height; i++) {
         for (int j = 0; j < new_img.width; j++) {
-            float somaR = 0, somaG = 0, somaB = 0;
+            float sumR = 0, sumG = 0, sumB = 0;
             for(int v = 0; v < k.height; v++) {
                 for(int u = 0; u < k.width; u++) {
                     int iy = i + v - v_offset;
@@ -61,14 +61,14 @@ Image apply_kernel(const Image& img, const Kernel& k) {
                     else if (iy >= img.height) iy = img.height - 1;
                     if (ix < 0) ix = 0;
                     else if (ix >= img.width) ix = img.width - 1;
-                    somaR += k.data[v][u] * img.data[iy][ix].r;
-                    somaG += k.data[v][u] * img.data[iy][ix].g;
-                    somaB += k.data[v][u] * img.data[iy][ix].b;
+                    sumR += k.data[v][u] * img.data[iy][ix].r;
+                    sumG += k.data[v][u] * img.data[iy][ix].g;
+                    sumB += k.data[v][u] * img.data[iy][ix].b;
                 }
             }
-            new_img.data[i][j].r = max(0, min(255, (int)somaR));
-            new_img.data[i][j].g = max(0, min(255, (int)somaG));
-            new_img.data[i][j].b = max(0, min(255, (int)somaB));
+            if (flag == -1 || flag == 0 )new_img.data[i][j].r = max(0, min(255, (int)sumR));
+            if (flag == -1 || flag == 1 )new_img.data[i][j].g = max(0, min(255, (int)sumG));
+            if (flag == -1 || flag == 2 )new_img.data[i][j].b = max(0, min(255, (int)sumB));
         }
     }
     return new_img;

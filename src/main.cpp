@@ -22,7 +22,7 @@ int main() {
             cout << "loadk [kernel idx] [file name]" << endl;
             cout << "makek [kernel idx] [u] [v]" << endl;
             cout << "drawk [kernel idx]" << endl;
-            cout << "applyk [image idx original] [kernel idx] [image idx result]" << endl;
+            cout << "applyk [image idx original] [kernel idx] [image idx result] [layer RGB. RGB = -1, R = 0, G = 1 and B = 2]" << endl;
             cout << "saveppm [image idx] [filename.ppm]" << endl;
         }
         else if (command == "load") {
@@ -50,8 +50,9 @@ int main() {
             }
         }
         else if (command == "applyk") {
-            img[stoi(param3)] = apply_kernel(img[stoi(param1)], kernels[stoi(param2)]);
+            img[stoi(param3)] = apply_kernel(img[stoi(param1)], kernels[stoi(param2)], stoi(param3));
         }
+
         else if (command == "saveppm") {
             make_ppm(img[stoi(param1)], param2);
         }
