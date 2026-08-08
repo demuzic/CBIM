@@ -1,8 +1,9 @@
 #include "../../include/core/image.h"
 #include <fstream>
 #include <iostream>
-
+#include "../../include/core/pixel.h"
 using namespace std;
+
 
 Image load_image(const string& image_name) {
     ifstream archive(image_name);
@@ -21,6 +22,18 @@ Image load_image(const string& image_name) {
         }
     }
     return img;
+}
+Image create_image_by_layer(Image R, Image G, Image B, int width, int height) {
+    Image img;
+    for(int i = 0; i < height; i++) {
+        for (int j = 0; j < width; j++) {
+            img.data[i][j].r = R.data[i][j].r;
+            img.data[i][j].g = R.data[i][j].g;
+            img.data[i][j].b = R.data[i][j].b;
+        }
+    }
+    return img;
+
 }
 
 void make_ppm(const Image& img, const string& filename) {

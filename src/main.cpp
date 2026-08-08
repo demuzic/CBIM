@@ -50,7 +50,7 @@ int main() {
             }
         }
         else if (command == "applyk") {
-            img[stoi(param3)] = apply_kernel(img[stoi(param1)], kernels[stoi(param2)], stoi(param3));
+            img[stoi(param3)] = apply_kernel(img[stoi(param1)], kernels[stoi(param2)], stoi(param4));
         }
 
         else if (command == "saveppm") {

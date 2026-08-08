@@ -61,9 +61,9 @@ Image apply_kernel(const Image& img, const Kernel& k, int flag) { //flag: -1 = a
                     else if (iy >= img.height) iy = img.height - 1;
                     if (ix < 0) ix = 0;
                     else if (ix >= img.width) ix = img.width - 1;
-                    sumR += k.data[v][u] * img.data[iy][ix].r;
-                    sumG += k.data[v][u] * img.data[iy][ix].g;
-                    sumB += k.data[v][u] * img.data[iy][ix].b;
+                    if (flag == -1 || flag == 0 )sumR += k.data[v][u] * img.data[iy][ix].r;
+                    if (flag == -1 || flag == 1 )sumG += k.data[v][u] * img.data[iy][ix].g;
+                    if (flag == -1 || flag == 2 )sumB += k.data[v][u] * img.data[iy][ix].b;
                 }
             }
             if (flag == -1 || flag == 0 )new_img.data[i][j].r = max(0, min(255, (int)sumR));

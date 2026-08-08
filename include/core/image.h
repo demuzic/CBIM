@@ -12,3 +12,4 @@ struct Image {
 
 Image load_image(const std::string& image_name);
 void make_ppm(const Image& img, const std::string& filename);
+Image create_image_by_layer(Image R, Image G, Image B, int width, int height);
