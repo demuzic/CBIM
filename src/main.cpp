@@ -14,8 +14,8 @@ int main() {
     while(1) {
         getline(cin, line);
         stringstream ss(line);
-        string command, param1, param2, param3, param4;
-        ss >> command >> param1 >> param2 >> param3 >> param4;
+        string command, param1, param2, param3, param4, param5;
+        ss >> command >> param1 >> param2 >> param3 >> param4 >> param5;
         if (command == "help") {
             cout << "use \"magick imagem.png -compress none imagem.ppm\" to convert to ppm" << endl;
             cout << "load [image idx] [file name]" << endl;
@@ -51,7 +51,7 @@ int main() {
             }
         }
         else if (command == "applyk") {
-            img[stoi(param3)] = apply_kernel(img[stoi(param1)], kernels[stoi(param2)], stoi(param4));
+            img[stoi(param3)] = apply_kernel(img[stoi(param1)], kernels[stoi(param2)], stoi(param4), stoi(param5));
         }
         else if (command == "makebl") {
             img[stoi(param1)] = create_image_by_layer(img[stoi(param2)], img[stoi(param3)], img[stoi(param4)], img[stoi(param2)].height, img[stoi(param2)].width, img[stoi(param2)].maxVal);

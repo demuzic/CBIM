@@ -42,7 +42,7 @@ Kernel make_kernel(int width, int height) {
     return k;
 }
 
-Image apply_kernel(const Image& img, const Kernel& k, int flag) { //flag: -1 = all rgb layers, 0 = r, 1 = g and 2 = b
+Image apply_kernel(const Image& img, const Kernel& k, int flag, int maxVal) { //flag: -1 = all rgb layers, 0 = r, 1 = g and 2 = b
     Image new_img;
     new_img.width = img.width;
     new_img.height = img.height;
@@ -66,9 +66,9 @@ Image apply_kernel(const Image& img, const Kernel& k, int flag) { //flag: -1 = a
                     if (flag == -1 || flag == 2 )sumB += k.data[v][u] * img.data[iy][ix].b;
                 }
             }
-            if (flag == -1 || flag == 0 )new_img.data[i][j].r = max(0, min(255, (int)sumR));
-            if (flag == -1 || flag == 1 )new_img.data[i][j].g = max(0, min(255, (int)sumG));
-            if (flag == -1 || flag == 2 )new_img.data[i][j].b = max(0, min(255, (int)sumB));
+            if (flag == -1 || flag == 0 )new_img.data[i][j].r = max(0, min(maxVal, (int)sumR));
+            if (flag == -1 || flag == 1 )new_img.data[i][j].g = max(0, min(maxVal, (int)sumG));
+            if (flag == -1 || flag == 2 )new_img.data[i][j].b = max(0, min(maxVal, (int)sumB));
         }
     }
     return new_img;
