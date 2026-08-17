@@ -11,6 +11,7 @@ int main() {
     vector<Image> img(10);
     vector<Kernel> kernels(50);
     string line;
+    //Temporary!
     while(1) {
         getline(cin, line);
         stringstream ss(line);
